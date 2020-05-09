@@ -1,0 +1,1 @@
+INSERT INTO taco (id, name) VALUES (123309, 'teh lonley taco');
