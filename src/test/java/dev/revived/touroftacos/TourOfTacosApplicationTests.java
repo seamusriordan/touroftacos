@@ -2,7 +2,6 @@ package dev.revived.touroftacos;
 
 import com.gargoylesoftware.htmlunit.WebClient;
 import dev.revived.touroftacos.controller.DerpController;
-import dev.revived.touroftacos.controller.FrumPageController;
 import org.jsoup.Jsoup;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,8 +27,6 @@ class TourOfTacosApplicationTests {
     private MockMvc mockMvc;
     @Autowired
     private DerpController derp;
-    @Autowired
-    private FrumPageController frum;
 
     WebClient webClient;
 
@@ -46,7 +43,7 @@ class TourOfTacosApplicationTests {
     }
 
     @Test
-    void gribviewSaysGrib() throws Exception {
+    void gribViewSaysGrib() throws Exception {
         ResultActions grib = mockMvc.perform(get("/frum/grib"));
 
         grib.andExpect(content().string(containsString("gribviewm")));
@@ -71,5 +68,6 @@ class TourOfTacosApplicationTests {
                 .andExpect(xpath("//span[@datatest-id='grib'][last()]")
                         .string(containsString("grib")));
     }
+
 
 }
