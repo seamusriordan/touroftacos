@@ -28,6 +28,6 @@ public class FrumPageController {
     public String grib(Model model) {
         model.addAttribute("gribkey", "gribviewm");
         model.addAttribute("help", helpfulService.getHelp());
-        return "gribview";
+        return "frum/gribview";
     }
 }
