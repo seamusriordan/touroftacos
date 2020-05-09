@@ -5,7 +5,4 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public interface TacoPository extends CrudRepository<Taco, Long> {
-
-
-}
+public interface TacoPository extends CrudRepository<Taco, Long> {}
