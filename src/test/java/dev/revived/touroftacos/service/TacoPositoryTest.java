@@ -1,38 +1,63 @@
 package dev.revived.touroftacos.service;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
+import static org.assertj.core.util.Lists.newArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 class TacoPositoryTest {
-    @Test
-    void tacopositoryStartsEmpty() {
-        var tacos = new TacoPository();
+    @Autowired
+    private TacoPository tacos;
 
-        assertEquals(0, tacos.size());
+    @BeforeEach
+    private void setup() {
+        tacos.deleteAll();
+    }
+
+    @Test
+    void tacopositoryStartsWithLonelyTaco() {
+        assertEquals(0, tacos.count());
     }
 
     @Test
     void tacopositoryAddOne() {
-        var tacos = new TacoPository();
-
         String name = "nom";
-        tacos.add(new Taco(name));
+        Taco taco = new Taco();
+        taco.setName(name);
+        tacos.save(taco);
 
-        assertEquals(1, tacos.size());
-        assertEquals(name, tacos.getTacos().get(0).getName());
+        assertEquals(1, tacos.count());
+
+        tacos.findAll().forEach(foundTaco -> {
+            assertEquals(name, foundTaco.getName());
+        });
     }
 
     @Test
     void tacopositoryAddTwo() {
-        var tacos = new TacoPository();
+        List<String> names = newArrayList("omnom", "twosday! get it?!");
+        Taco taco = new Taco();
+        taco.setName(names.get(0));
+        tacos.save(taco);
 
-        String name = "omnom";
-        tacos.add(new Taco(name));
-        tacos.add(new Taco(name));
+        Taco tacoTwosday = new Taco();
+        tacoTwosday.setName(names.get(1));
+        tacos.save(tacoTwosday);
 
-        assertEquals(2, tacos.size());
-        assertEquals(name, tacos.getTacos().get(1).getName());
+
+        assertEquals(2, tacos.count());
+
+        List<Taco> foundTacos = newArrayList(tacos.findAll());
+
+        for (int i = 0; i < foundTacos.size(); i++) {
+            assertEquals(names.get(i), foundTacos.get(i).getName());
+        }
     }
 
 }
