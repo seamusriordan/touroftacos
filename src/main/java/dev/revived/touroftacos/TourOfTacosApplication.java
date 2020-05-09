@@ -1,13 +1,13 @@
-package dev.revived.tourofheroes;
+package dev.revived.touroftacos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TourofheroesApplication {
+public class TourOfTacosApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TourofheroesApplication.class, args);
+        SpringApplication.run(TourOfTacosApplication.class, args);
     }
 
 }

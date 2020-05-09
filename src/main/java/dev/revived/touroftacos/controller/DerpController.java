@@ -1,4 +1,4 @@
-package dev.revived.tourofheroes.controller;
+package dev.revived.touroftacos.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;

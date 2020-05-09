@@ -1,4 +1,4 @@
-package dev.revived.tourofheroes.controller;
+package dev.revived.touroftacos.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
