@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.SortedSet;
 
 @Service
 public class TacoPository {
@@ -13,6 +12,7 @@ public class TacoPository {
 
     public TacoPository() {
         tacos = new ArrayList<>(0);
+        tacos.add(new Taco("The lonely taco"));
     }
 
     public int size() {

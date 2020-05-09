@@ -46,18 +46,8 @@ public class DerpController {
     }
 
     @GetMapping("/json")
-    public String json() {
-
-        String v = "";
-        try {
-            v = new ObjectMapper()
-                    .writeValueAsString(new Garbage());
-            logger.debug(String.format("Derp  %s", v));
-
-        } catch (java.io.IOException e) {
-            logger.error(String.format("Derpfail %s", e.getMessage()));
-        }
-        return v;
+    public Garbage json() {
+        return new Garbage();
     }
 
 
