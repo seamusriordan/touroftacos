@@ -1,1 +1,11 @@
-INSERT INTO taco (id, name) VALUES (123309, 'teh lonley taco');
+INSERT INTO taco (id, name) VALUES (1, 'Windy Taco');
+INSERT INTO taco (id, name) VALUES (11, 'Nice Taco');
+INSERT INTO taco (id, name) VALUES (12, 'Sleepy Taco');
+INSERT INTO taco (id, name) VALUES (13, 'Bomb Taco');
+INSERT INTO taco (id, name) VALUES (14, 'Celery Taco');
+INSERT INTO taco (id, name) VALUES (15, 'Magnetic Taco');
+INSERT INTO taco (id, name) VALUES (16, 'Rubber Taco');
+INSERT INTO taco (id, name) VALUES (17, 'Exploding Taco');
+INSERT INTO taco (id, name) VALUES (18, 'Smart Taco');
+INSERT INTO taco (id, name) VALUES (19, 'Spicy Taco');
+INSERT INTO taco (id, name) VALUES (20, 'Tornado Taco');

@@ -1,17 +1,15 @@
 package dev.revived.touroftacos;
 
-import com.gargoylesoftware.htmlunit.WebClient;
 import dev.revived.touroftacos.controller.DerpController;
 import org.jsoup.Jsoup;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.htmlunit.MockMvcWebClientBuilder;
-import org.springframework.web.context.WebApplicationContext;
+
 
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -28,14 +26,6 @@ class TourOfTacosApplicationTests {
     @Autowired
     private DerpController derp;
 
-    WebClient webClient;
-
-    @BeforeEach
-    void setup(WebApplicationContext context) {
-        webClient = MockMvcWebClientBuilder
-                .webAppContextSetup(context)
-                .build();
-    }
 
     @Test
     void contextLoads() {

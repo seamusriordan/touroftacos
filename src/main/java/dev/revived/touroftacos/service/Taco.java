@@ -11,7 +11,7 @@ public class Taco {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    public Long id;
 
     public Taco() {
     }
