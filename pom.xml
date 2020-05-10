@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>dev.revived</groupId>
-    <artifactId>tourofheroes</artifactId>
+    <artifactId>touroftacos</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>tourofheroes</name>
-    <description>Tour of Heroes with React Redux with Spring Boot</description>
+    <name>touroftacos</name>
+    <description>Tour of Tacos with React Redux with Spring Boot</description>
 
     <properties>
         <java.version>11</java.version>
@@ -29,8 +29,7 @@
             <scope>test</scope>
             <exclusions>
                 <exclusion>
-                    <groupId>org.
-                        .vintage</groupId>
+                    <groupId>org.vintage</groupId>
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
