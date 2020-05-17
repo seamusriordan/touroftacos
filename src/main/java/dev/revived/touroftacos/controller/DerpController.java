@@ -42,7 +42,7 @@ public class DerpController {
     @GetMapping("")
     public String gogogogo() {
 
-        return "assasssasss";
+        return "aaaaaaaaaaaaaaaaaaaa";
     }
 
     @GetMapping("/json")

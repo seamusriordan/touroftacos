@@ -29,7 +29,7 @@ class TourOfTacosApplicationTests {
 
     @Test
     void contextLoads() {
-        assertTrue(derp.gogogogo().contains("ass"));
+        assertTrue(derp.gogogogo().contains("aaa"));
     }
 
     @Test

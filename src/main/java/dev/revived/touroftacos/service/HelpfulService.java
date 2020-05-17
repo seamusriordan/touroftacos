@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 
 @Service
 public class HelpfulService {
@@ -22,8 +25,16 @@ public class HelpfulService {
         String help = "I'M HELPING";
         logger.error(help);
 
-        var response = webClient.get().uri("http://localhost:8080/derp")
-                .retrieve().bodyToMono(String.class).block();
+        String hostname;
+        try {
+            hostname = InetAddress.getLocalHost().getHostName();
+        } catch (UnknownHostException e)
+        {
+            hostname = "localhost";
+            logger.error("UnknownHostException " + e.getMessage());
+        }
+
+        var response = webClient.get().uri("http://" + hostname + "/derp");
         logger.error(String.format("I HELPED %s", response));
 
         return help;
